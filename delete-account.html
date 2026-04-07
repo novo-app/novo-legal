@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ștergere cont și date – NOVO</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0B1629;
+      color: #CBD5E1;
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+    }
+    .container { max-width: 720px; margin: 0 auto; }
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      color: #3BC9DB;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #64748B;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .updated {
+      font-size: 12px;
+      color: #64748B;
+      margin-bottom: 36px;
+    }
+    h2 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #94A3B8;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    p, li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #94A3B8;
+    }
+    ul { padding-left: 20px; margin-top: 6px; }
+    li { margin-bottom: 4px; }
+    .card {
+      background: #131F35;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .card.primary {
+      border-color: rgba(59,201,219,0.25);
+      background: #0F1E33;
+    }
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+    }
+    .steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .steps li::before {
+      content: counter(step);
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #3BC9DB;
+      color: #0B1629;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .steps li span {
+      padding-top: 4px;
+    }
+    a { color: #3BC9DB; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .warning {
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #FCA5A5;
+    }
+    .email-box {
+      background: #0F1E33;
+      border: 1px solid rgba(59,201,219,0.2);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 14px;
+      font-size: 14px;
+      color: #94A3B8;
+    }
+    .email-box strong { color: #FFFFFF; }
+    .nav {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      font-size: 13px;
+      color: #64748B;
+    }
+    .nav a:hover { color: #3BC9DB; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">NOVO</div>
+    <div class="subtitle">Marketplace de servicii profesionale</div>
+
+    <h1>Ștergere cont și date</h1>
+    <div class="updated">Conform Google Play Data Safety și Apple App Store Guidelines</div>
+
+    <div class="card primary">
+      <h2>Cum îți ștergi contul din aplicație</h2>
+      <p>Poți șterge contul direct din aplicația NOVO, fără a ne contacta:</p>
+      <ol class="steps" style="margin-top:16px;">
+        <li><span>Deschide aplicația NOVO și autentifică-te</span></li>
+        <li><span>Mergi la <strong>Profil → Setări</strong></span></li>
+        <li><span>Derulează în jos până la secțiunea <strong>CONT</strong></span></li>
+        <li><span>Apasă <strong>Șterge contul</strong></span></li>
+        <li><span>Confirmă de două ori — contul și toate datele vor fi șterse imediat</span></li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Ce date sunt șterse</h2>
+      <p>La ștergerea contului, eliminăm permanent:</p>
+      <ul>
+        <li>Datele de profil (nume, telefon, email, adresă)</li>
+        <li>Istoricul de joburi și cereri</li>
+        <li>Mesajele din chat</li>
+        <li>Recenziile lăsate sau primite</li>
+        <li>Favoritele și preferințele</li>
+        <li>Contul de autentificare (Firebase Auth)</li>
+        <li>Toate datele stocate local pe dispozitiv</li>
+      </ul>
+      <div class="warning">
+        Ștergerea este permanentă și nu poate fi anulată. Datele nu pot fi recuperate după ștergere.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Ștergere prin email</h2>
+      <p>Dacă nu mai ai acces la cont sau preferi să soliciți ștergerea manual, trimite-ne un email:</p>
+      <div class="email-box">
+        <strong>Adresă:</strong> <a href="mailto:contact@novoapp.ro">contact@novoapp.ro</a><br>
+        <strong>Subiect:</strong> Solicitare ștergere cont NOVO<br>
+        <strong>Conținut:</strong> Adresa de email asociată contului tău<br>
+        <strong>Timp de procesare:</strong> Maximum 30 de zile
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Date păstrate după ștergere</h2>
+      <p>Anumite date pot fi reținute pentru o perioadă limitată din motive legale sau de securitate:</p>
+      <ul>
+        <li>Înregistrări anonimizate de activitate suspectă (până la 90 zile)</li>
+        <li>Date necesare pentru conformitate fiscală sau legală, acolo unde aplicabil</li>
+      </ul>
+      <p style="margin-top:10px;">Aceste date nu pot fi asociate identității tale după ștergerea contului.</p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Pentru orice întrebări legate de datele tale personale:</p>
+      <p style="margin-top:8px;"><a href="mailto:contact@novoapp.ro">contact@novoapp.ro</a></p>
+    </div>
+
+    <div class="nav">
+      <a href="privacy.html">Politica de confidențialitate</a>
+      <a href="terms.html">Termeni și condiții</a>
+    </div>
+  </div>
+</body>
+</html>
